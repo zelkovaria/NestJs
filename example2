@@ -1,0 +1,14 @@
+function deco(target: any, propertyKey: string, descriptor: PropertyDescriptor) {
+    console.log('데커레이터가 평가됨');
+  }
+  
+  class TestClass {
+    @deco("HELLO")
+    test() {
+      console.log('함수 호출됨')
+    }
+  }
+  
+  const t = new TestClass();
+  t.test(); // "데커레이터가 평가됨"과 "함수 호출됨"이 출력됩니다.
+  
